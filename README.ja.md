@@ -485,8 +485,9 @@ curl -G -X GET \
             "postalCode": "10439"
         },
         "name": "Bösebrücke Einkauf",
-        "https://uri.fiware.org/ns/data-models#category":
-            "https://uri.fiware.org/ns/data-models#commercial",
+        "https://uri.fiware.org/ns/data-models#category": {
+            "vocab": "https://wiki.openstreetmap.org/wiki/Tag:building%3Dcommercial"
+        },
         "location": {
             "type": "Point",
             "coordinates": [
@@ -506,8 +507,9 @@ curl -G -X GET \
             "postalCode": "10969"
         },
         "name": "Checkpoint Markt",
-        "https://uri.fiware.org/ns/data-models#category":
-            "https://uri.fiware.org/ns/data-models#commercial",
+        "https://uri.fiware.org/ns/data-models#category": {
+            "vocab": "https://wiki.openstreetmap.org/wiki/Tag:building%3Dcommercial"
+        },
         "location": {
             "type": "Point",
             "coordinates": [

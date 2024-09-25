@@ -463,7 +463,9 @@ The response returns all of the existing **Building** entities, with the attribu
             "https://schema.org/postalCode": "10439"
         },
         "https://schema.org/name": "Bösebrücke Einkauf",
-        "https://uri.fiware.org/ns/data-models#category": "https://uri.fiware.org/ns/data-models#commercial",
+        "https://uri.fiware.org/ns/data-models#category": {
+            "vocab": "https://wiki.openstreetmap.org/wiki/Tag:building%3Dcommercial"
+        },
         "location": {
             "type": "Point",
             "coordinates": [13.3986, 52.5547]
@@ -480,7 +482,9 @@ The response returns all of the existing **Building** entities, with the attribu
             "https://schema.org/postalCode": "10969"
         },
         "https://schema.org/name": "Checkpoint Markt",
-        "https://uri.fiware.org/ns/data-models#category": "https://uri.fiware.org/ns/data-models#commercial",
+        "https://uri.fiware.org/ns/data-models#category": {
+            "vocab": "https://wiki.openstreetmap.org/wiki/Tag:building%3Dcommercial"
+        },
         "location": {
             "type": "Point",
             "coordinates": [13.3903, 52.5075]
