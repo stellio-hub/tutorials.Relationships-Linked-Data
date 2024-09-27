@@ -529,7 +529,6 @@ However since the full context has been supplied in the `Link` header, the short
 ```json
 [
     {
-        "@context": "http://context/user-context.jsonld",
         "id": "urn:ngsi-ld:Product:001",
         "type": "Product",
         "price": 0.99,
@@ -537,7 +536,6 @@ However since the full context has been supplied in the `Link` header, the short
         "name": "Apples"
     },
     {
-        "@context": "http://context/user-context.jsonld",
         "id": "urn:ngsi-ld:Product:002",
         "type": "Product",
         "price": 10.99,
@@ -695,7 +693,6 @@ Note that the relationship is currently unidirectional. **Shelf** :arrow_right: 
 curl -X POST \
   'http://localhost:1026/ngsi-ld/v1/entities/urn:ngsi-ld:Shelf:unit001/attrs' \
   -H 'Content-Type: application/ld+json' \
-  -H 'fiware-servicepath: /' \
   -d '{
     "numberOfItems": {"type": "Property","value": 50},
     "stocks": {
