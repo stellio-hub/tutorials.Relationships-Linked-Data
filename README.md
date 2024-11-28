@@ -771,7 +771,7 @@ passed in the previous request.
         "type": "Relationship",
         "object": "urn:ngsi-ld:Product:001"
     },
-    "name": {
+    "https:/schema.org/name": {
         "type": "Property",
         "value": "Corner Unit"
     },
@@ -862,6 +862,7 @@ curl -G -X GET \
   'http://localhost:1026/ngsi-ld/v1/entities/urn:ngsi-ld:Shelf:unit001/' \
   -d 'attrs=locatedIn' \
   -d 'options=keyValues' \
+  -H 'Accept: application/ld+json' \
   -H 'Link: <http://context/user-context-with-graph.jsonld>; rel="http://www.w3.org/ns/json-ld#context"; type="application/ld+json"'
 ```
 
@@ -869,7 +870,10 @@ curl -G -X GET \
 
 ```json
 {
-    "@context": "http://context/user-context-with-graph.jsonld",
+    "@context": [
+        "http://context/user-context.jsonld",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld",
+    ],
     "id": "urn:ngsi-ld:Shelf:unit001",
     "type": "Shelf",
     "locatedIn": "urn:ngsi-ld:Building:store001"
@@ -922,7 +926,10 @@ curl -L -X POST 'http://localhost:1026/ngsi-ld/v1/entities/urn:ngsi-ld:Building:
 --data-raw '{
     "furniture": {
         "type": "Relationship",
-        "object":  ["urn:ngsi-ld:Shelf:001", "urn:ngsi-ld:Shelf:002"]
+        "object": [
+            "urn:ngsi-ld:Shelf:001",
+            "urn:ngsi-ld:Shelf:002"
+        ]
     },
     "@context": "http://context/user-context-with-graph.jsonld"
 }'
@@ -970,7 +977,7 @@ The **StockOrder** is created as a standard NGSI-LD data entity.
 
 ```console
 curl -X POST \
-  http://localhost:1026/ngsi-ld/v1/entities/ \
+  'http://localhost:1026/ngsi-ld/v1/entities/' \
   -H 'Content-Type: application/ld+json' \
   -d '{
   "id": "urn:ngsi-ld:StockOrder:001",
@@ -1081,6 +1088,7 @@ adding the appropriate URN.
 ```console
 curl -G -X GET \
   'http://localhost:1026/ngsi-ld/v1/entities/urn:ngsi-ld:StockOrder:001' \
+  -H 'Accept: application/ld+json' \
   -d 'options=keyValues'
 ```
 
